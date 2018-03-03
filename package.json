@@ -8,16 +8,14 @@
     "url": "http://leoasis.github.io"
   },
   "homepage": "https://github.com/leoasis/graphql-tag.macro",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "license": "MIT",
   "main": "dist/index.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.0.2",
     "babel-literal-to-ast": "^1.0.0",
-    "babel-macros": "^1.0.2",
+    "babel-plugin-macros": "^1.0.2",
     "babel-plugin-tester": "^4.0.0",
     "babel-preset-env": "^1.6.0",
     "jest": "^21.0.2"
@@ -29,7 +27,8 @@
   "scripts": {
     "test": "jest",
     "babel": "babel src --out-dir dist --ignore test.js,__snapthots__",
-    "prepublish": "rm -rf dist && npm run babel && mv dist/index.macro.js dist/index.js"
+    "prepublish":
+      "rm -rf dist && npm run babel && mv dist/index.macro.js dist/index.js"
   },
   "jest": {
     "transform": {

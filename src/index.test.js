@@ -1,6 +1,6 @@
 import path from 'path';
 import pluginTester from 'babel-plugin-tester';
-import plugin from 'babel-macros';
+import plugin from 'babel-plugin-macros';
 
 pluginTester({
   plugin,
@@ -50,7 +50,7 @@ pluginTester({
       \`;
     `,
   ]),
-})
+});
 
 /*
  * This adds the filename to each test so you can do require/import relative
@@ -58,12 +58,12 @@ pluginTester({
  */
 function withFilename(tests) {
   return tests.map(t => {
-    const test = {babelOptions: {filename: __filename}}
+    const test = { babelOptions: { filename: __filename } };
     if (typeof t === 'string') {
-      test.code = t
+      test.code = t;
     } else {
-      Object.assign(test, t)
+      Object.assign(test, t);
     }
-    return test
-  })
+    return test;
+  });
 }
